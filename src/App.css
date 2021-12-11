@@ -46,15 +46,7 @@ main {
   background: #855b5b;
 }
 
-main.ingame #toolbar>:not(.ingame) {
-  display: none;
-}
-
-main:not(.ingame) #toolbar>:not(.inmenu) {
-  display: none;
-}
-
-#toolbar>div {
+#toolbar {
   display: flex;
   justify-content: space-between;
   height: 30px;
