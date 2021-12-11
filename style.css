@@ -1,0 +1,59 @@
+h3 {
+  margin: 0;
+}
+
+main {
+  max-width: 900px;
+  width: 80vw;
+  margin: 40px auto;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  height: 80vw;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.card {
+  width: 32%;
+  height: 32%;
+  background: #e7baba;
+}
+
+#inputBar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(1% * var(--width-for-cards));
+  height: calc(1% * var(--height-for-cards));
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(100% / var(--height-for-cards)) calc(100% / var(--width-for-cards));
+  --card-width: 15;
+  --card-height: 15;
+  --width-for-cards: 47;
+  --height-for-cards: 31;
+}
+
+#inputBar>.card {
+  width: calc(100% / var(--width-for-cards) * var(--card-width));
+  height: calc(100% / var(--height-for-cards) * var(--card-height));
+  background: #855b5b;
+}
+
+main.ingame #toolbar>:not(.ingame) {
+  display: none;
+}
+
+main:not(.ingame) #toolbar>:not(.inmenu) {
+  display: none;
+}
+
+#toolbar>div {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
