@@ -3,12 +3,15 @@ import { useState } from "react"
 export default function Cards({ stage, palette, boardState }) {
   const [cardsState, setCardsState] = useState(arr9)
   const [inputVisible, setInputVisible] = useState(false)
+  const [indexToInput, setIndexToInput] = useState(0)
 
   const showInputBar = i => {
+    setIndexToInput(i)
     setInputVisible(true)
   }
 
   const inputColor = (i, color) => {
+    setCardsState(Object.assign([...cardsState], {[i]: color}))
     setInputVisible(false)
   }
 
@@ -24,7 +27,7 @@ export default function Cards({ stage, palette, boardState }) {
           ? cardsState.map((color, i) => <button
             className="card"
             style={{ background: palette[color] }}
-            onClick={showInputBar}
+            onClick={() => showInputBar(i)}
             key={i}
           ></button>)
           : arr9.map((_, i) => <div className="card" key={i}></div>)
@@ -35,7 +38,7 @@ export default function Cards({ stage, palette, boardState }) {
           <button
             className="card"
             style={{ background: color }}
-            onClick={inputColor}
+            onClick={() => inputColor(indexToInput, i)}
             key={i}
           ></button>)}
       </div>}
