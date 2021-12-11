@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+h3 {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  max-width: var(--max-size);
+  width: 80vw;
+  margin: 40px auto;
+  --max-size: 820px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#cards {
+  max-height: var(--max-size);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  gap: 2%;
+  height: 80vw;
+  margin-bottom: 30px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  width: 32%;
+  height: 32%;
+  background: #e7baba;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#inputBar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(1% * var(--width-for-cards));
+  height: calc(1% * var(--height-for-cards));
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(100% / var(--height-for-cards)) calc(100% / var(--width-for-cards));
+  --card-width: 15;
+  --card-height: 15;
+  --width-for-cards: 47;
+  --height-for-cards: 31;
+}
+
+#inputBar>.card {
+  width: calc(100% / var(--width-for-cards) * var(--card-width));
+  height: calc(100% / var(--height-for-cards) * var(--card-height));
+  background: #855b5b;
+}
+
+main.ingame #toolbar>:not(.ingame) {
+  display: none;
+}
+
+main:not(.ingame) #toolbar>:not(.inmenu) {
+  display: none;
+}
+
+#toolbar>div {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
 }

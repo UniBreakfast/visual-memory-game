@@ -3,12 +3,14 @@ h3 {
 }
 
 main {
-  max-width: 900px;
+  max-width: var(--max-size);
   width: 80vw;
   margin: 40px auto;
+  --max-size: 820px;
 }
 
 #cards {
+  max-height: var(--max-size);
   display: flex;
   flex-wrap: wrap;
   gap: 2%;
