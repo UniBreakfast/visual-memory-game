@@ -22,7 +22,7 @@ main {
 .card {
   width: 32%;
   height: 32%;
-  background: #e7baba;
+  background: #f6e8e8;
 }
 
 #inputBar {
@@ -43,7 +43,7 @@ main {
 #inputBar>.card {
   width: calc(100% / var(--width-for-cards) * var(--card-width));
   height: calc(100% / var(--height-for-cards) * var(--card-height));
-  background: #855b5b;
+  background: #b79595;
   box-shadow: 0 0 7px 2px #fff;
 }
 
