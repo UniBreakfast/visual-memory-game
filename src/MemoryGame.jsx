@@ -10,14 +10,15 @@ export default function MemoryGame() {
   const [delay, setDelay] = useState(delays[2])
 
   const startGame = () => {
-    const {palette, colorSet} = genBoardState()
+    const { palette, colorSet } = genBoardState()
     setPalette(palette)
     setBoardState(colorSet)
     setStage('memorization')
+    setTimeout(playGame, delay * 1000)
   }
 
   const playGame = () => {
-
+    setStage('inGame')
   }
 
   const checkCards = () => {
@@ -27,10 +28,12 @@ export default function MemoryGame() {
 
   return (
     <main id="gameBox">
-      <Cards {...{palette, boardState}}/>
-      <ToolBar {...{stage, startGame, checkCards, delays, delay, setDelay}}/>
+      <Cards {...{ stage, palette, boardState }} />
+      <ToolBar {...{ stage, startGame, checkCards, delays, delay, setDelay }} />
     </main>
   )
 }
 
 const delays = ['4', '7', '10', '12', '15']
+
+delays[2] /= 10
