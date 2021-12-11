@@ -44,6 +44,7 @@ main {
   width: calc(100% / var(--width-for-cards) * var(--card-width));
   height: calc(100% / var(--height-for-cards) * var(--card-height));
   background: #855b5b;
+  box-shadow: 0 0 7px 2px #fff;
 }
 
 #toolbar {

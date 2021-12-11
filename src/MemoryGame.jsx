@@ -6,9 +6,13 @@ import genBoardState from "./boardGenerator.js"
 export default function MemoryGame() {
   const [stage, setStage] = useState('inMenu')
   const [boardState, setBoardState] = useState([])
+  const [palette, setPalette] = useState([])
+  const [delay, setDelay] = useState(delays[2])
 
   const startGame = () => {
-    setBoardState(genBoardState())
+    const {palette, cellColors} = genBoardState()
+    setPalette(palette)
+    setBoardState(cellColors)
     setStage('memorization')
   }
 
@@ -19,8 +23,10 @@ export default function MemoryGame() {
 
   return (
     <main id="gameBox">
-      <Cards {...{boardState}}/>
-      <ToolBar {...{stage, startGame, checkCards}}/>
+      <Cards {...{palette, boardState}}/>
+      <ToolBar {...{stage, startGame, checkCards, delays, delay, setDelay}}/>
     </main>
   )
 }
+
+const delays = ['4', '7', '10', '12', '15']

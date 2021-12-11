@@ -1,4 +1,10 @@
-export default function ToolBar({ stage, startGame, checkCards }) {
+import { createRef } from "react"
+
+export default function ToolBar(props) {
+  const { stage, startGame, checkCards, delays, delay, setDelay } = props
+
+  const selectRef = createRef()
+  const handleChange = () => setDelay(selectRef.current.value)
 
   return (
     <div id="toolbar">
@@ -8,12 +14,12 @@ export default function ToolBar({ stage, startGame, checkCards }) {
             <button id="start" onClick={startGame}>
               Start the game
             </button>
-            <select id="difficultySelect">
-              <option value="4">4 seconds</option>
-              <option value="7">7 seconds</option>
-              <option value="10">10 seconds</option>
-              <option value="12">12 seconds</option>
-              <option value="15">15 seconds</option>
+            <select ref={selectRef} onChange={handleChange} value={delay}>
+              {
+                delays.map((delay, i) => <option value={delay} key={i}>
+                  {delay} seconds
+                </option>)
+              }
             </select>
           </>
         ) : (

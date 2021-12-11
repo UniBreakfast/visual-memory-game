@@ -1,4 +1,4 @@
-export default function Cards({ boardState }) {
+export default function Cards({ palette, boardState }) {
 
   return (
     <div id="cards">
@@ -11,12 +11,7 @@ export default function Cards({ boardState }) {
       }
 
       <div id="inputBar">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        {palette.map((color, i) => <div className="card" key={i} style={{background: color}}></div>)}
       </div>
     </div>
   )

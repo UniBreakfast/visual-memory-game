@@ -17,7 +17,7 @@ export default function genBoardState() {
     cellColors.push(palette[rnd(0, hues.length)])
   }
 
-  return cellColors
+  return {palette, cellColors}
 }
 
 function rnd(min, max) {
