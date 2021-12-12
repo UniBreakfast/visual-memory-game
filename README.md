@@ -1,5 +1,7 @@
 # Visual Memory Game (React)
 
+[Play the Game now!](https://fervent-panini-ade669.netlify.app/)
+
 ![image](https://user-images.githubusercontent.com/19654456/145729255-fc7c0452-70e5-4f56-990b-85fd3235a3ff.png)
 
 
