@@ -36,10 +36,10 @@ export default function Cards(props) {
               style={{ background: palette[color] }}
               key={i}
             >
-              {color !== cardsState[i] && <div
+              {cardsState[i] && cardsState[i] !== color ? <div
                 className="mistake"
                 style={{ background: palette[cardsState[i]] }}
-              ></div>}
+              ></div> : ''}
             </div>)
             : arr9.map((_, i) => <div className="card" key={i}></div>)
       }
@@ -47,7 +47,7 @@ export default function Cards(props) {
       <div
         id="inputBar"
         style={{ transform: `translate(${indexToInput % 3 * step - step}%, ${Math.floor(indexToInput / 3) * step - step}%)`}}
-        className={!inputVisible && 'outside'}
+        className={!inputVisible ? 'outside' : ''}
       >
         {palette.map((color, i) => <button
           className="card"
