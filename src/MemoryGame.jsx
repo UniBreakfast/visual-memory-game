@@ -16,21 +16,17 @@ export default function MemoryGame() {
     setBoardState(colorSet)
     setCardsState([...Array(9)])
     setStage('memorization')
-    setTimeout(playGame, delay * 1000)
+    setTimeout(() => setStage('inGame'), delay * 1000)
   }
 
-  const playGame = () => {
-    setStage('inGame')
-  }
-
-  const checkCards = cardsState => {
+  const endGame = () => {
     setStage('review')
   }
 
   return (
     <main id="gameBox">
       <Cards {...{ stage, palette, boardState, cardsState, setCardsState }} />
-      <ToolBar {...{ stage, startGame, checkCards, delays, delay, setDelay }} />
+      <ToolBar {...{ stage, startGame, endGame, delays, delay, setDelay }} />
     </main>
   )
 }

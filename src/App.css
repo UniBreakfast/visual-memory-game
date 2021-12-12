@@ -23,19 +23,29 @@ main {
   width: 32%;
   height: 32%;
   background: #f6e8e8;
+  border-radius: 4%;
+  transition: 0.3s;
 }
 
 .mistake {
-  width: 90%;
-  height: 90%;
   transform-origin: 0 0;
-  transform: rotate(15deg);
+  height: 100%;
+  border-radius: 4%;
+  animation: fall 0.5s forwards;
+}
+
+@keyframes fall {
+  to {
+    width: 90%;
+    height: 90%;
+    transform: rotate(15deg);
+    box-shadow: 0 0 10px 0 #0008;
+  }
 }
 
 #inputBar {
   position: absolute;
-  overflow: hidden;
-  transition: 0.2s;
+  transition: 0.4s;
   top: 43%;
   left: 27%;
   width: calc(1% * var(--width-for-cards));
@@ -47,6 +57,12 @@ main {
   --card-height: 15;
   --width-for-cards: 47;
   --height-for-cards: 31;
+}
+
+#inputBar.outside {
+  width: 0;
+  height: 0;
+  left: -100%;
 }
 
 #inputBar>.card {

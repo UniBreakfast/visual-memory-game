@@ -34,30 +34,27 @@ export default function Cards(props) {
             ? boardState.map((color, i) => <div
               className="card"
               style={{ background: palette[color] }}
-              onClick={() => showInputBar(i)}
               key={i}
             >
-              {
-                color !== cardsState[i] && <div
-                  className="mistake"
-                  style={{ background: palette[cardsState[i]] }}
-                ></div>
-              }
+              {color !== cardsState[i] && <div
+                className="mistake"
+                style={{ background: palette[cardsState[i]] }}
+              ></div>}
             </div>)
             : arr9.map((_, i) => <div className="card" key={i}></div>)
       }
 
       <div
         id="inputBar"
-        style={{ transform: `translate(${indexToInput % 3 * step - step}%, ${Math.floor(indexToInput / 3) * step - step}%)`, ...inputVisible? {} : {width: 0, height: 0} }}
+        style={{ transform: `translate(${indexToInput % 3 * step - step}%, ${Math.floor(indexToInput / 3) * step - step}%)`}}
+        className={!inputVisible && 'outside'}
       >
-        {palette.map((color, i) =>
-          <button
-            className="card"
-            style={{ background: color }}
-            onClick={() => inputColor(indexToInput, i)}
-            key={i}
-          ></button>)}
+        {palette.map((color, i) => <button
+          className="card"
+          style={{ background: color }}
+          onClick={() => inputColor(indexToInput, i)}
+          key={i}
+        ></button>)}
       </div>
     </div>
   )

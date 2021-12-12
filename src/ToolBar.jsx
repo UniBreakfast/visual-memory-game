@@ -1,7 +1,7 @@
 import { createRef } from "react"
 
 export default function ToolBar(props) {
-  const { stage, startGame, checkCards, delays, delay, setDelay } = props
+  const { stage, startGame, endGame, delays, delay, setDelay } = props
 
   const selectRef = createRef()
   const handleChange = () => setDelay(selectRef.current.value)
@@ -16,13 +16,13 @@ export default function ToolBar(props) {
           <select ref={selectRef} onChange={handleChange} value={delay}>
             {
               delays.map((delay, i) => <option value={delay} key={i}>
-                {delay} seconds
+                {delay} seconds to memorize
               </option>)
             }
           </select>
         </> : <>
-          <h3>Remember the card content you've seen</h3>
-          <button id="submit" onClick={checkCards}>
+          <h3>Remember the card colors you've seen</h3>
+          <button id="submit" onClick={endGame}>
             Submit solution
           </button>
         </>
