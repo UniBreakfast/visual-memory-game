@@ -9,6 +9,7 @@ export default function MemoryGame() {
   const [cardsState, setCardsState] = useState([...Array(9)])
   const [palette, setPalette] = useState([...Array(6)])
   const [delay, setDelay] = useState(delays[2])
+  const [timer, setTimer] = useState(-1)
 
   const startGame = () => {
     const { palette, colorSet } = genBoardState()
@@ -16,7 +17,8 @@ export default function MemoryGame() {
     setBoardState(colorSet)
     setCardsState([...Array(9)])
     setStage('memorization')
-    setTimeout(() => setStage('inGame'), delay * 1000)
+    clearTimeout(timer)
+    setTimer(setTimeout(() => setStage('inGame'), delay * 1000))
   }
 
   const endGame = () => {
