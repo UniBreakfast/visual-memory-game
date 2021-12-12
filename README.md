@@ -1,3 +1,8 @@
+#Visual Memory Game (React)
+
+![image](https://user-images.githubusercontent.com/19654456/145729255-fc7c0452-70e5-4f56-990b-85fd3235a3ff.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
