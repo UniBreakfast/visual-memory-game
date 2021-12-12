@@ -25,10 +25,19 @@ main {
   background: #f6e8e8;
 }
 
+.mistake {
+  width: 90%;
+  height: 90%;
+  transform-origin: 0 0;
+  transform: rotate(15deg);
+}
+
 #inputBar {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  overflow: hidden;
+  transition: 0.2s;
+  top: 43%;
+  left: 27%;
   width: calc(1% * var(--width-for-cards));
   height: calc(1% * var(--height-for-cards));
   display: flex;

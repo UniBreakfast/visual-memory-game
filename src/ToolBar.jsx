@@ -9,7 +9,7 @@ export default function ToolBar(props) {
   return (
     <div id="toolbar">
       {
-        stage === 'inMenu' ? <>
+        stage === 'inMenu' || stage === 'review' ? <>
           <button id="start" onClick={startGame}>
             Start the game
           </button>
