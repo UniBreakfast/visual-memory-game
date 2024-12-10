@@ -1,9 +1,20 @@
+# [visual-memory-game](https://github.com/UniBreakfast/visual-memory-game)
+
 # Visual Memory Game (React)
+
+### Done with a student during a lesson.
 
 [Play the Game now!](https://fervent-panini-ade669.netlify.app/)
 
 ![image](https://user-images.githubusercontent.com/19654456/145729255-fc7c0452-70e5-4f56-990b-85fd3235a3ff.png)
 
+![image](https://github.com/user-attachments/assets/47465590-34c9-4ecd-b178-d343f0638e24)
+
+![image](https://github.com/user-attachments/assets/25fa8df3-31fa-4f8e-a9fd-6bfee2beecc2)
+
+![image](https://github.com/user-attachments/assets/3dbe77bf-04b1-49e8-9978-fdd9a77cee69)
+
+![image](https://github.com/user-attachments/assets/f7ca6bc2-7ded-471b-99a1-18ae25102b78)
 
 # Getting Started with Create React App
 
