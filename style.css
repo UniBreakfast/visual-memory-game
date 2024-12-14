@@ -22,32 +22,13 @@ main {
 .card {
   width: 32%;
   height: 32%;
-  background: #f6e8e8;
-  border-radius: 4%;
-  transition: 0.3s;
-}
-
-.mistake {
-  transform-origin: 0 0;
-  height: 100%;
-  border-radius: 4%;
-  animation: fall 0.5s forwards;
-}
-
-@keyframes fall {
-  to {
-    width: 90%;
-    height: 90%;
-    transform: rotate(15deg);
-    box-shadow: 0 0 10px 0 #0008;
-  }
+  background: #e7baba;
 }
 
 #inputBar {
   position: absolute;
-  transition: 0.4s;
-  top: 43%;
-  left: 27%;
+  top: 50%;
+  left: 50%;
   width: calc(1% * var(--width-for-cards));
   height: calc(1% * var(--height-for-cards));
   display: flex;
@@ -59,20 +40,21 @@ main {
   --height-for-cards: 31;
 }
 
-#inputBar.outside {
-  width: 0;
-  height: 0;
-  left: -100%;
-}
-
 #inputBar>.card {
   width: calc(100% / var(--width-for-cards) * var(--card-width));
   height: calc(100% / var(--height-for-cards) * var(--card-height));
-  background: #b79595;
-  box-shadow: 0 0 7px 2px #fff;
+  background: #855b5b;
 }
 
-#toolbar {
+main.ingame #toolbar>:not(.ingame) {
+  display: none;
+}
+
+main:not(.ingame) #toolbar>:not(.inmenu) {
+  display: none;
+}
+
+#toolbar>div {
   display: flex;
   justify-content: space-between;
   height: 30px;
